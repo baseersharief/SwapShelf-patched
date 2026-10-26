@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: swapshelf
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true   # Render generates a strong secret
+      - key: DEBUG
+        value: "0"
+      - key: PORT
+        value: "3000"
